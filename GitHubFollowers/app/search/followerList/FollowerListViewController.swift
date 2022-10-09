@@ -35,7 +35,11 @@ class FollowerListViewController: UIViewController {
                 page += 1
                 print("Followers = \(followers.count)")
             } catch {
-                presentErrorAlert(message: "Failed to load the followers")
+                var errorMessage = "Failed to load the followers"
+                if let error = error as? NetworkError {
+                    errorMessage = error.rawValue
+                }
+                presentErrorAlert(message: errorMessage)
             }
         }
     }

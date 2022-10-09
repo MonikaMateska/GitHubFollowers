@@ -22,6 +22,8 @@
 		E23072B728F35B420012507B /* GHTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072B628F35B420012507B /* GHTitleLabel.swift */; };
 		E23072B928F35BFF0012507B /* GHBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072B828F35BFF0012507B /* GHBodyLabel.swift */; };
 		E23072BB28F35D720012507B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072BA28F35D720012507B /* Extensions.swift */; };
+		E23072BF28F373290012507B /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072BE28F373290012507B /* Follower.swift */; };
+		E23072C128F374720012507B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072C028F374720012507B /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		E23072B628F35B420012507B /* GHTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHTitleLabel.swift; sourceTree = "<group>"; };
 		E23072B828F35BFF0012507B /* GHBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHBodyLabel.swift; sourceTree = "<group>"; };
 		E23072BA28F35D720012507B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E23072BE28F373290012507B /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		E23072C028F374720012507B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +116,9 @@
 			isa = PBXGroup;
 			children = (
 				E23072BC28F36C1A0012507B /* app */,
+				E23072BD28F373070012507B /* models */,
 				E23072AE28F30AC10012507B /* shared */,
+				E23072C228F375590012507B /* api */,
 				E230727828F2F3CE0012507B /* AppDelegate.swift */,
 				E230727A28F2F3CE0012507B /* SceneDelegate.swift */,
 				E230728128F2F3D30012507B /* Assets.xcassets */,
@@ -183,6 +189,22 @@
 				E23072A928F2FC390012507B /* favourites */,
 			);
 			path = app;
+			sourceTree = "<group>";
+		};
+		E23072BD28F373070012507B /* models */ = {
+			isa = PBXGroup;
+			children = (
+				E23072BE28F373290012507B /* Follower.swift */,
+				E23072C028F374720012507B /* User.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		E23072C228F375590012507B /* api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +345,8 @@
 				E23072BB28F35D720012507B /* Extensions.swift in Sources */,
 				E230727928F2F3CE0012507B /* AppDelegate.swift in Sources */,
 				E23072B928F35BFF0012507B /* GHBodyLabel.swift in Sources */,
+				E23072C128F374720012507B /* User.swift in Sources */,
+				E23072BF28F373290012507B /* Follower.swift in Sources */,
 				E230727B28F2F3CE0012507B /* SceneDelegate.swift in Sources */,
 				E23072B728F35B420012507B /* GHTitleLabel.swift in Sources */,
 			);

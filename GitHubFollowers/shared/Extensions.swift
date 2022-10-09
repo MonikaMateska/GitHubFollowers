@@ -9,7 +9,9 @@ import UIKit
 
 extension UIViewController {
     
-    func presentErrorAlert(title: String, message: String, buttonText: String) {
+    func presentErrorAlert(title: String = "Error",
+                           message: String,
+                           buttonText: String = "OK") {
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alertController.addAction(UIAlertAction.init(title: buttonText, style: .destructive))

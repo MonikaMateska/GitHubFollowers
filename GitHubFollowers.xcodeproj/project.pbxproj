@@ -19,6 +19,9 @@
 		E23072B028F30B020012507B /* GHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072AF28F30B020012507B /* GHButton.swift */; };
 		E23072B228F3104C0012507B /* GHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072B128F3104C0012507B /* GHTextField.swift */; };
 		E23072B528F33FA80012507B /* FollowerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072B428F33FA80012507B /* FollowerListViewController.swift */; };
+		E23072B728F35B420012507B /* GHTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072B628F35B420012507B /* GHTitleLabel.swift */; };
+		E23072B928F35BFF0012507B /* GHBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072B828F35BFF0012507B /* GHBodyLabel.swift */; };
+		E23072BB28F35D720012507B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072BA28F35D720012507B /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		E23072AF28F30B020012507B /* GHButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHButton.swift; sourceTree = "<group>"; };
 		E23072B128F3104C0012507B /* GHTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHTextField.swift; sourceTree = "<group>"; };
 		E23072B428F33FA80012507B /* FollowerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListViewController.swift; sourceTree = "<group>"; };
+		E23072B628F35B420012507B /* GHTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHTitleLabel.swift; sourceTree = "<group>"; };
+		E23072B828F35BFF0012507B /* GHBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHBodyLabel.swift; sourceTree = "<group>"; };
+		E23072BA28F35D720012507B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,9 @@
 			children = (
 				E23072AF28F30B020012507B /* GHButton.swift */,
 				E23072B128F3104C0012507B /* GHTextField.swift */,
+				E23072B628F35B420012507B /* GHTitleLabel.swift */,
+				E23072B828F35BFF0012507B /* GHBodyLabel.swift */,
+				E23072BA28F35D720012507B /* Extensions.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -303,8 +312,11 @@
 				E23072B228F3104C0012507B /* GHTextField.swift in Sources */,
 				E23072B528F33FA80012507B /* FollowerListViewController.swift in Sources */,
 				E23072AB28F2FC830012507B /* SearchViewController.swift in Sources */,
+				E23072BB28F35D720012507B /* Extensions.swift in Sources */,
 				E230727928F2F3CE0012507B /* AppDelegate.swift in Sources */,
+				E23072B928F35BFF0012507B /* GHBodyLabel.swift in Sources */,
 				E230727B28F2F3CE0012507B /* SceneDelegate.swift in Sources */,
+				E23072B728F35B420012507B /* GHTitleLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

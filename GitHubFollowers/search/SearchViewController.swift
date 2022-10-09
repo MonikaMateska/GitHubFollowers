@@ -34,7 +34,12 @@ class SearchViewController: UIViewController {
     }
     
     @objc func pushFollowerListViewController() {
-        guard usernameIsValid else { return }
+        guard usernameIsValid else {
+            presentErrorAlert(title: "Error",
+                              message: "The username is not valid. Please enter a valid one so we know who you are looking for.",
+                              buttonText: "OK")
+            return
+        }
         let followerListViewController = FollowerListViewController()
         followerListViewController.username = usernameTextField.text
         followerListViewController.title = usernameTextField.text

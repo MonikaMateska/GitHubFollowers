@@ -111,9 +111,8 @@
 		E230727728F2F3CE0012507B /* GitHubFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				E23072BC28F36C1A0012507B /* app */,
 				E23072AE28F30AC10012507B /* shared */,
-				E23072A828F2FC320012507B /* search */,
-				E23072A928F2FC390012507B /* favourites */,
 				E230727828F2F3CE0012507B /* AppDelegate.swift */,
 				E230727A28F2F3CE0012507B /* SceneDelegate.swift */,
 				E230728128F2F3D30012507B /* Assets.xcassets */,
@@ -175,6 +174,15 @@
 				E23072B428F33FA80012507B /* FollowerListViewController.swift */,
 			);
 			path = followerList;
+			sourceTree = "<group>";
+		};
+		E23072BC28F36C1A0012507B /* app */ = {
+			isa = PBXGroup;
+			children = (
+				E23072A828F2FC320012507B /* search */,
+				E23072A928F2FC390012507B /* favourites */,
+			);
+			path = app;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

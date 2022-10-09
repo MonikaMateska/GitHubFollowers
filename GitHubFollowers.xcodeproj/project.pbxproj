@@ -16,6 +16,8 @@
 		E230729C28F2F3D50012507B /* GitHubFollowersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230729B28F2F3D50012507B /* GitHubFollowersUITestsLaunchTests.swift */; };
 		E23072AB28F2FC830012507B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072AA28F2FC830012507B /* SearchViewController.swift */; };
 		E23072AD28F2FCA30012507B /* FavouritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072AC28F2FCA30012507B /* FavouritesListViewController.swift */; };
+		E23072B028F30B020012507B /* GHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072AF28F30B020012507B /* GHButton.swift */; };
+		E23072B228F3104C0012507B /* GHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072B128F3104C0012507B /* GHTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		E230729B28F2F3D50012507B /* GitHubFollowersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubFollowersUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E23072AA28F2FC830012507B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E23072AC28F2FCA30012507B /* FavouritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListViewController.swift; sourceTree = "<group>"; };
+		E23072AF28F30B020012507B /* GHButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHButton.swift; sourceTree = "<group>"; };
+		E23072B128F3104C0012507B /* GHTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		E230727728F2F3CE0012507B /* GitHubFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				E23072AE28F30AC10012507B /* shared */,
 				E23072A828F2FC320012507B /* search */,
 				E23072A928F2FC390012507B /* favourites */,
 				E230727828F2F3CE0012507B /* AppDelegate.swift */,
@@ -141,6 +146,15 @@
 				E23072AC28F2FCA30012507B /* FavouritesListViewController.swift */,
 			);
 			path = favourites;
+			sourceTree = "<group>";
+		};
+		E23072AE28F30AC10012507B /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				E23072AF28F30B020012507B /* GHButton.swift */,
+				E23072B128F3104C0012507B /* GHTextField.swift */,
+			);
+			path = shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +287,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E23072B028F30B020012507B /* GHButton.swift in Sources */,
 				E23072AD28F2FCA30012507B /* FavouritesListViewController.swift in Sources */,
+				E23072B228F3104C0012507B /* GHTextField.swift in Sources */,
 				E23072AB28F2FC830012507B /* SearchViewController.swift in Sources */,
 				E230727928F2F3CE0012507B /* AppDelegate.swift in Sources */,
 				E230727B28F2F3CE0012507B /* SceneDelegate.swift in Sources */,

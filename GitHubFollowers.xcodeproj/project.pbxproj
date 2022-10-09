@@ -26,6 +26,8 @@
 		E23072C128F374720012507B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072C028F374720012507B /* User.swift */; };
 		E23072C528F377480012507B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072C428F377480012507B /* NetworkManager.swift */; };
 		E23072C728F379280012507B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072C628F379280012507B /* NetworkError.swift */; };
+		E23072C928F3858A0012507B /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072C828F385890012507B /* FollowerCell.swift */; };
+		E23072CB28F385F80012507B /* GHAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072CA28F385F80012507B /* GHAvatarImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		E23072C028F374720012507B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E23072C428F377480012507B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E23072C628F379280012507B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		E23072C828F385890012507B /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
+		E23072CA28F385F80012507B /* GHAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAvatarImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,7 @@
 				E23072B128F3104C0012507B /* GHTextField.swift */,
 				E23072B628F35B420012507B /* GHTitleLabel.swift */,
 				E23072B828F35BFF0012507B /* GHBodyLabel.swift */,
+				E23072CA28F385F80012507B /* GHAvatarImageView.swift */,
 				E23072BA28F35D720012507B /* Extensions.swift */,
 			);
 			path = shared;
@@ -182,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				E23072B428F33FA80012507B /* FollowerListViewController.swift */,
+				E23072C828F385890012507B /* FollowerCell.swift */,
 			);
 			path = followerList;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 			files = (
 				E23072B028F30B020012507B /* GHButton.swift in Sources */,
 				E23072C728F379280012507B /* NetworkError.swift in Sources */,
+				E23072C928F3858A0012507B /* FollowerCell.swift in Sources */,
 				E23072AD28F2FCA30012507B /* FavouritesListViewController.swift in Sources */,
 				E23072B228F3104C0012507B /* GHTextField.swift in Sources */,
 				E23072C528F377480012507B /* NetworkManager.swift in Sources */,
@@ -355,6 +362,7 @@
 				E23072B928F35BFF0012507B /* GHBodyLabel.swift in Sources */,
 				E23072C128F374720012507B /* User.swift in Sources */,
 				E23072BF28F373290012507B /* Follower.swift in Sources */,
+				E23072CB28F385F80012507B /* GHAvatarImageView.swift in Sources */,
 				E230727B28F2F3CE0012507B /* SceneDelegate.swift in Sources */,
 				E23072B728F35B420012507B /* GHTitleLabel.swift in Sources */,
 			);

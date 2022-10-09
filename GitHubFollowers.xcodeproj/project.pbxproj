@@ -18,6 +18,7 @@
 		E23072AD28F2FCA30012507B /* FavouritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072AC28F2FCA30012507B /* FavouritesListViewController.swift */; };
 		E23072B028F30B020012507B /* GHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072AF28F30B020012507B /* GHButton.swift */; };
 		E23072B228F3104C0012507B /* GHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072B128F3104C0012507B /* GHTextField.swift */; };
+		E23072B528F33FA80012507B /* FollowerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072B428F33FA80012507B /* FollowerListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		E23072AC28F2FCA30012507B /* FavouritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListViewController.swift; sourceTree = "<group>"; };
 		E23072AF28F30B020012507B /* GHButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHButton.swift; sourceTree = "<group>"; };
 		E23072B128F3104C0012507B /* GHTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHTextField.swift; sourceTree = "<group>"; };
+		E23072B428F33FA80012507B /* FollowerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		E23072A828F2FC320012507B /* search */ = {
 			isa = PBXGroup;
 			children = (
+				E23072B328F33F6E0012507B /* followerList */,
 				E23072AA28F2FC830012507B /* SearchViewController.swift */,
 			);
 			path = search;
@@ -155,6 +158,14 @@
 				E23072B128F3104C0012507B /* GHTextField.swift */,
 			);
 			path = shared;
+			sourceTree = "<group>";
+		};
+		E23072B328F33F6E0012507B /* followerList */ = {
+			isa = PBXGroup;
+			children = (
+				E23072B428F33FA80012507B /* FollowerListViewController.swift */,
+			);
+			path = followerList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 				E23072B028F30B020012507B /* GHButton.swift in Sources */,
 				E23072AD28F2FCA30012507B /* FavouritesListViewController.swift in Sources */,
 				E23072B228F3104C0012507B /* GHTextField.swift in Sources */,
+				E23072B528F33FA80012507B /* FollowerListViewController.swift in Sources */,
 				E23072AB28F2FC830012507B /* SearchViewController.swift in Sources */,
 				E230727928F2F3CE0012507B /* AppDelegate.swift in Sources */,
 				E230727B28F2F3CE0012507B /* SceneDelegate.swift in Sources */,

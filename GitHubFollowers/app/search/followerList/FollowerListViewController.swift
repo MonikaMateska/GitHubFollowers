@@ -18,6 +18,7 @@ class FollowerListViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
     
     var page: Int = 1
+    var hasMoreFollowers = true
     var followers: [Follower] = []
 
     override func viewDidLoad() {
@@ -35,10 +36,14 @@ class FollowerListViewController: UIViewController {
     }
     
     private func loadFollowers() {
+        guard hasMoreFollowers else { return }
         Task {
             do {
                 let response = try await NetworkManager.shared.getFollowers(username: username,
                                                                             page: page)
+                if response.count < 100 {
+                    hasMoreFollowers = false
+                }
                 followers.append(contentsOf: response)
                 page += 1
                 updateData()
@@ -73,6 +78,7 @@ class FollowerListViewController: UIViewController {
     
     private func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createThreeColumnFlowLayout())
+        collectionView.delegate = self
         view.addSubview(collectionView)
         
         collectionView.backgroundColor = .systemBackground
@@ -96,5 +102,19 @@ class FollowerListViewController: UIViewController {
         DispatchQueue.main.async {
             self.dataSource.apply(snapshot, animatingDifferences: true)
         }
+    }
+}
+
+extension FollowerListViewController: UICollectionViewDelegate {
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        
+        if offsetY > contentHeight - height {
+            loadFollowers()
+        }
+        
     }
 }

@@ -48,10 +48,8 @@ class FollowerCell: UICollectionViewCell {
         self.addSubview(usernameLebel)
         
         NSLayoutConstraint.activate([
-            usernameLebel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -12),
+            usernameLebel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -17),
             usernameLebel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            usernameLebel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
-            usernameLebel.trailingAnchor.constraint(equalTo: self.leadingAnchor, constant: -8),
             usernameLebel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }

@@ -7,6 +7,8 @@
 
 import UIKit
 
+fileprivate var containerView: UIView!
+
 extension UIViewController {
     
     func presentErrorAlert(title: String = "Error",
@@ -17,6 +19,37 @@ extension UIViewController {
             alertController.addAction(UIAlertAction.init(title: buttonText, style: .destructive))
             self.present(alertController, animated: true)
         }
+    }
+    
+    func showLoadingView() {
+        containerView = UIView(frame: view.frame)
+        view.addSubview(containerView)
+        
+        containerView.backgroundColor = .systemBackground
+        containerView.alpha = 0
+        
+        UIView.animate(withDuration: 0.25) {
+            containerView.alpha = 0.7
+        }
+        
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        containerView.addSubview(activityIndicator)
+        
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        
+        activityIndicator.startAnimating()
+    }
+    
+    func hideLoadingView() {
+        UIView.animate(withDuration: 0.25) {
+            containerView.alpha = 0
+        }
+        containerView = nil
     }
     
 }

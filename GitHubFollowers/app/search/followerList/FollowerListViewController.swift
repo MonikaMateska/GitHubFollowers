@@ -37,10 +37,13 @@ class FollowerListViewController: UIViewController {
     
     private func loadFollowers() {
         guard hasMoreFollowers else { return }
+        showLoadingView()
+        
         Task {
             do {
                 let response = try await NetworkManager.shared.getFollowers(username: username,
                                                                             page: page)
+                hideLoadingView()
                 if response.count < 100 {
                     hasMoreFollowers = false
                 }
@@ -48,6 +51,7 @@ class FollowerListViewController: UIViewController {
                 page += 1
                 updateData()
             } catch {
+                hideLoadingView()
                 var errorMessage = "Failed to load the followers"
                 if let error = error as? NetworkError {
                     errorMessage = error.rawValue

@@ -50,6 +50,11 @@ class FollowerListViewController: UIViewController {
                 followers.append(contentsOf: response)
                 page += 1
                 updateData()
+                
+                if followers.isEmpty {
+                    let message = "This user doesn't have any followers. Go and follow them! 😊"
+                    showEmptyStateView(with: message, in: view)
+                }
             } catch {
                 hideLoadingView()
                 var errorMessage = "Failed to load the followers"

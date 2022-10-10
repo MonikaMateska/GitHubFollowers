@@ -10,14 +10,15 @@ import UIKit
 class FollowerListViewController: UIViewController {
     
     var username: String!
+    var collectionView: UICollectionView!
     var page: Int = 1
     var followers: [Follower] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemBackground
-        navigationController?.navigationBar.prefersLargeTitles = true
+        configureViewController()
+        configureCollectionView()
         loadFollowers()
     }
     
@@ -33,7 +34,6 @@ class FollowerListViewController: UIViewController {
                                                                             page: page)
                 followers.append(contentsOf: response)
                 page += 1
-                print("Followers = \(followers.count)")
             } catch {
                 var errorMessage = "Failed to load the followers"
                 if let error = error as? NetworkError {
@@ -42,5 +42,18 @@ class FollowerListViewController: UIViewController {
                 presentErrorAlert(message: errorMessage)
             }
         }
+    }
+    
+    private func configureViewController() {
+        view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    private func configureCollectionView() {
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewLayout())
+        view.addSubview(collectionView)
+        
+        collectionView.backgroundColor = .systemPink
+        collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
     }
 }

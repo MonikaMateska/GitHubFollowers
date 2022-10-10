@@ -9,8 +9,14 @@ import UIKit
 
 class FollowerListViewController: UIViewController {
     
+    enum Section {
+        case main
+    }
+    
     var username: String!
     var collectionView: UICollectionView!
+    var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
+    
     var page: Int = 1
     var followers: [Follower] = []
 
@@ -20,6 +26,7 @@ class FollowerListViewController: UIViewController {
         configureViewController()
         configureCollectionView()
         loadFollowers()
+        configureDataSource()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +41,7 @@ class FollowerListViewController: UIViewController {
                                                                             page: page)
                 followers.append(contentsOf: response)
                 page += 1
+                updateData()
             } catch {
                 var errorMessage = "Failed to load the followers"
                 if let error = error as? NetworkError {
@@ -69,5 +77,24 @@ class FollowerListViewController: UIViewController {
         
         collectionView.backgroundColor = .systemPink
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
+    }
+    
+    private func configureDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView,
+                                                                           cellProvider: { collectionView, indexPath, follower in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
+            
+            cell.set(follower: follower)
+            return cell
+        })
+    }
+    
+    private func updateData() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(followers)
+        DispatchQueue.main.async {
+            self.dataSource.apply(snapshot, animatingDifferences: true)
+        }
     }
 }

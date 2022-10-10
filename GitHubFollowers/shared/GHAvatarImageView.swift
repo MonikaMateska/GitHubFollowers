@@ -28,18 +28,10 @@ class GHAvatarImageView: UIImageView {
     }
     
     func downloadImage(from urlString: String) {
-        guard let url = URL(string: urlString) else { return }
-        
         Task { @MainActor in
-            let request = URLRequest(url: url)
-            let (data, response) = try await URLSession.shared.data(for: request)
-            
-            if let response = response as? HTTPURLResponse,
-               response.statusCode == 200,
-               let downloadedImage = UIImage(data: data) {
+            if let downloadedImage = await NetworkManager.shared.downloadImage(from: urlString) {
                 image = downloadedImage
             }
         }
-
     }
 }

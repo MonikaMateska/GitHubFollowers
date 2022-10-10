@@ -5,12 +5,14 @@
 //  Created by Monika Mateska on 9.10.22.
 //
 
-import Foundation
+import UIKit
 
 class NetworkManager {
+    
     static let shared = NetworkManager()
     
-    let baseURL = "https://api.github.com/users/"
+    private let baseURL = "https://api.github.com/users/"
+    let cache = NSCache<NSString, UIImage>()
     
     private init() { }
     
@@ -34,5 +36,34 @@ class NetworkManager {
         }
         
         return followers
+    }
+    
+    func downloadImage(from urlString: String) async -> UIImage? {
+        if let cachedImage = readCachedImage(from: urlString) {
+            return cachedImage
+        }
+        
+        guard let url = URL(string: urlString) else { return nil }
+        
+        do {
+            let request = URLRequest(url: url)
+            let (data, _) = try await URLSession.shared.data(for: request)
+            if let downloadedImage = UIImage(data: data) {
+                cacheImage(downloadedImage, for: urlString)
+                return downloadedImage
+            } else {
+                return nil
+            }
+        } catch {
+            return nil
+        }
+    }
+    
+    private func cacheImage(_ image: UIImage, for urlString: String) {
+        cache.setObject(image, forKey: urlString as NSString)
+    }
+    
+    private func readCachedImage(from urlString: String) -> UIImage? {
+        cache.object(forKey: urlString as NSString)
     }
 }

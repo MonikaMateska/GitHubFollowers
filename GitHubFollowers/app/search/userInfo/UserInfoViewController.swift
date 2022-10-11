@@ -17,10 +17,22 @@ class UserInfoViewController: UIViewController {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissViewController))
         navigationItem.rightBarButtonItem = doneButton
         
-        print(username)
+        loadUserData()
     }
     
     @objc func dismissViewController() {
         dismiss(animated: true)
+    }
+    
+    private func loadUserData() {
+        Task {
+            do {
+                let user = try await NetworkManager.shared.getUserInfo(for: self.username)
+                print(user)
+            } catch {
+                let mappedError = error as! NetworkError
+                presentErrorAlert(message: "Failed loading user info. \(mappedError.rawValue).")
+            }
+        }
     }
 }

@@ -59,6 +59,31 @@ class NetworkManager {
         }
     }
     
+    func getUserInfo(for username: String) async throws -> User {
+        let endpoint = "\(baseURL)\(username)"
+        guard let url = URL(string: endpoint) else {
+            throw NetworkError.notValidUrl
+        }
+        
+        let request = URLRequest(url: url)
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            guard let response = response as? HTTPURLResponse,
+                  response.statusCode == 200 else {
+                throw NetworkError.requestFailed
+            }
+            
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            guard let loadedUser = try? decoder.decode(User.self, from: data) else {
+                throw NetworkError.decodingFailed
+            }
+            return loadedUser
+        } catch {
+            throw NetworkError.requestFailed
+        }
+    }
+    
     private func cacheImage(_ image: UIImage, for urlString: String) {
         cache.setObject(image, forKey: urlString as NSString)
     }

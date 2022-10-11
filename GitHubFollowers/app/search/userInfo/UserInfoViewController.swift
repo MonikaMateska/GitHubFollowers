@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol UserInfoViewControllerDelegate: AnyObject {
+    func didTapGitHubProfile(for user: User)
+    func didTapGetFollowers(for user: User)
+}
+
 class UserInfoViewController: UIViewController {
     
     var username: String!
+    weak var delegate: FollowerListViewControllerDelegate!
     
     let headerView = UIView()
     let itemViewOne = UIView()
@@ -32,10 +38,7 @@ class UserInfoViewController: UIViewController {
             do {
                 let user = try await NetworkManager.shared.getUserInfo(for: self.username)
                 hideLoadingView()
-                addChildViewController(GHUserInfoViewController(user: user), to: headerView)
-                addChildViewController(GHRepoItemViewController(user: user), to: itemViewOne)
-                addChildViewController(GHFollowerItemViewController(user: user), to: itemViewTwo)
-                updateDateLabel(with: user.createdAt)
+                configureUIelements(with: user)
             } catch {
                 hideLoadingView()
                 let mappedError = error as! NetworkError
@@ -49,6 +52,20 @@ class UserInfoViewController: UIViewController {
         configureViewOne()
         configureViewTwo()
         configureDateLabel()
+    }
+    
+    private func configureUIelements(with user: User) {
+        addChildViewController(GHUserInfoViewController(user: user), to: headerView)
+        
+        let repoItemVc = GHRepoItemViewController(user: user)
+        repoItemVc.delegate = self
+        addChildViewController(repoItemVc, to: itemViewOne)
+        
+        let followerItemVc = GHFollowerItemViewController(user: user)
+        followerItemVc.delegate = self
+        addChildViewController(followerItemVc, to: itemViewTwo)
+        
+        updateDateLabel(with: user.createdAt)
     }
     
     private func configureHeaderView() {
@@ -115,6 +132,22 @@ class UserInfoViewController: UIViewController {
     }
     
     @objc func dismissViewController() {
+        dismiss(animated: true)
+    }
+}
+
+extension UserInfoViewController: UserInfoViewControllerDelegate {
+    
+    func didTapGitHubProfile(for user: User) {
+        presentInSafariView(with: user.htmlUrl)
+    }
+    
+    func didTapGetFollowers(for user: User) {
+        guard user.followers > 0 else {
+            presentErrorAlert(message: "This user does not have any follower.")
+            return 
+        }
+        delegate.didRequestFollowers(for: user.login)
         dismiss(animated: true)
     }
 }

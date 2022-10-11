@@ -13,7 +13,6 @@ class GHFollowerItemViewController: GHItemInfoViewController {
         super.viewDidLoad()
         
         configureItems()
-        configureButtonAction()
     }
     
     private func configureItems() {
@@ -22,7 +21,7 @@ class GHFollowerItemViewController: GHItemInfoViewController {
         actionButton.set(backgroundColor: .systemGreen, title: "Get Followers")
     }
     
-    private func configureButtonAction() {
-        
+    override func actionButtonTapped() {
+        delegate.didTapGetFollowers(for: user)
     }
 }

@@ -15,7 +15,7 @@ class GHItemInfoViewController: UIViewController {
     let actionButton = GHButton()
     
     let user: User!
-    
+    weak var delegate: UserInfoViewControllerDelegate!
     
     init(user: User) {
         self.user = user
@@ -70,6 +70,8 @@ class GHItemInfoViewController: UIViewController {
         view.addSubview(actionButton)
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         
+        actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
+        
         NSLayoutConstraint.activate([
             actionButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -padding),
             actionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -77,4 +79,6 @@ class GHItemInfoViewController: UIViewController {
             actionButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
+    
+    @objc func actionButtonTapped() { }
 }

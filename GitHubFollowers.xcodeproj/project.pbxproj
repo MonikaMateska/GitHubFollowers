@@ -260,9 +260,9 @@
 			isa = PBXGroup;
 			children = (
 				E23072D128F57B440012507B /* GHUserInfoViewController.swift */,
-				E23072D728F594900012507B /* GHItemInfoViewController.swift */,
 				E23072DD28F597640012507B /* GHRepoItemViewController.swift */,
 				E23072DF28F59B6A0012507B /* GHFollowerItemViewController.swift */,
+				E23072D728F594900012507B /* GHItemInfoViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 fileprivate var containerView: UIView!
 
@@ -57,6 +58,17 @@ extension UIViewController {
         emptyStateView.frame = view.bounds
         
         view.addSubview(emptyStateView)
+    }
+    
+    func presentInSafariView(with url: String) {
+        guard let url = URL(string: url) else {
+            presentErrorAlert(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonText: "OK")
+            return
+        }
+        
+        let safariViewController = SFSafariViewController(url: url)
+        safariViewController.preferredControlTintColor = .systemGreen
+        present(safariViewController, animated: true)
     }
     
 }

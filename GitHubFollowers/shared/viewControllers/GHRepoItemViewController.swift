@@ -13,7 +13,6 @@ class GHRepoItemViewController: GHItemInfoViewController {
         super.viewDidLoad()
         
         configureItems()
-        configureButtonAction()
     }
     
     private func configureItems() {
@@ -22,7 +21,7 @@ class GHRepoItemViewController: GHItemInfoViewController {
         actionButton.set(backgroundColor: .systemPurple, title: "GitHub Profile")
     }
     
-    private func configureButtonAction() {
-        
+    override func actionButtonTapped() {
+        delegate.didTapGitHubProfile(for: user)
     }
 }

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol FollowerListViewControllerDelegate: NSObject {
+    func didRequestFollowers(for username: String)
+}
+
 class FollowerListViewController: UIViewController {
     
     enum Section {
@@ -60,6 +64,7 @@ class FollowerListViewController: UIViewController {
                 }
             } catch {
                 hideLoadingView()
+                cleanupFollowersState()
                 var errorMessage = "Failed to load the followers"
                 if let error = error as? NetworkError {
                     errorMessage = error.rawValue
@@ -147,6 +152,7 @@ extension FollowerListViewController: UICollectionViewDelegate {
         let selectedFollower = isSearching ? filteredFollowers[index] : followers[index]
         
         let userInfoViewController = UserInfoViewController()
+        userInfoViewController.delegate = self
         userInfoViewController.username = selectedFollower.login
         let navigationController = UINavigationController(rootViewController: userInfoViewController)
         present(navigationController, animated: true)
@@ -170,6 +176,25 @@ extension FollowerListViewController: UISearchResultsUpdating, UISearchBarDelega
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         isSearching = false
         updateData(with: followers)
+    }
+    
+}
+
+extension FollowerListViewController: FollowerListViewControllerDelegate {
+    
+    func didRequestFollowers(for username: String) {
+        self.username = username
+        navigationItem.title = username
+        cleanupFollowersState()
+        loadFollowers()
+    }
+    
+    func cleanupFollowersState() {
+        page = 1
+        hasMoreFollowers = true
+        followers = []
+        filteredFollowers = []
+        updateData(with: [])
     }
     
 }

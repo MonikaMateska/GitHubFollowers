@@ -32,6 +32,8 @@ class UserInfoViewController: UIViewController {
                 let user = try await NetworkManager.shared.getUserInfo(for: self.username)
                 hideLoadingView()
                 addChildViewController(GHUserInfoViewController(user: user), to: headerView)
+                addChildViewController(GHRepoItemViewController(user: user), to: itemViewOne)
+                addChildViewController(GHFollowerItemViewController(user: user), to: itemViewTwo)
             } catch {
                 hideLoadingView()
                 let mappedError = error as! NetworkError
@@ -65,8 +67,6 @@ class UserInfoViewController: UIViewController {
         view.addSubview(itemViewOne)
         itemViewOne.translatesAutoresizingMaskIntoConstraints = false
         
-        itemViewOne.backgroundColor = .systemPink
-        
         NSLayoutConstraint.activate([
             itemViewOne.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
             itemViewOne.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
@@ -78,8 +78,6 @@ class UserInfoViewController: UIViewController {
     private func configureViewTwo() {
         view.addSubview(itemViewTwo)
         itemViewTwo.translatesAutoresizingMaskIntoConstraints = false
-        
-        itemViewTwo.backgroundColor = .systemBlue
         
         NSLayoutConstraint.activate([
             itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: padding),

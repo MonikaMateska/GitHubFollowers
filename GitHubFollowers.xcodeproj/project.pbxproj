@@ -30,6 +30,8 @@
 		E23072CB28F385F80012507B /* GHAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072CA28F385F80012507B /* GHAvatarImageView.swift */; };
 		E23072CD28F4A3350012507B /* GHEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072CC28F4A3350012507B /* GHEmptyStateView.swift */; };
 		E23072D028F564470012507B /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072CF28F564470012507B /* UserInfoViewController.swift */; };
+		E23072D228F57B440012507B /* GHUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072D128F57B440012507B /* GHUserInfoViewController.swift */; };
+		E23072D428F57B8D0012507B /* GHSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072D328F57B8D0012507B /* GHSecondaryTitleLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		E23072CA28F385F80012507B /* GHAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAvatarImageView.swift; sourceTree = "<group>"; };
 		E23072CC28F4A3350012507B /* GHEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEmptyStateView.swift; sourceTree = "<group>"; };
 		E23072CF28F564470012507B /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		E23072D128F57B440012507B /* GHUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserInfoViewController.swift; sourceTree = "<group>"; };
+		E23072D328F57B8D0012507B /* GHSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,9 +185,11 @@
 				E23072AF28F30B020012507B /* GHButton.swift */,
 				E23072B128F3104C0012507B /* GHTextField.swift */,
 				E23072B628F35B420012507B /* GHTitleLabel.swift */,
+				E23072D328F57B8D0012507B /* GHSecondaryTitleLabel.swift */,
 				E23072B828F35BFF0012507B /* GHBodyLabel.swift */,
 				E23072CA28F385F80012507B /* GHAvatarImageView.swift */,
 				E23072CC28F4A3350012507B /* GHEmptyStateView.swift */,
+				E23072D128F57B440012507B /* GHUserInfoViewController.swift */,
 				E23072BA28F35D720012507B /* Extensions.swift */,
 			);
 			path = shared;
@@ -366,9 +372,11 @@
 				E23072B028F30B020012507B /* GHButton.swift in Sources */,
 				E23072C728F379280012507B /* NetworkError.swift in Sources */,
 				E23072C928F3858A0012507B /* FollowerCell.swift in Sources */,
+				E23072D228F57B440012507B /* GHUserInfoViewController.swift in Sources */,
 				E23072AD28F2FCA30012507B /* FavouritesListViewController.swift in Sources */,
 				E23072B228F3104C0012507B /* GHTextField.swift in Sources */,
 				E23072CD28F4A3350012507B /* GHEmptyStateView.swift in Sources */,
+				E23072D428F57B8D0012507B /* GHSecondaryTitleLabel.swift in Sources */,
 				E23072C528F377480012507B /* NetworkManager.swift in Sources */,
 				E23072B528F33FA80012507B /* FollowerListViewController.swift in Sources */,
 				E23072AB28F2FC830012507B /* SearchViewController.swift in Sources */,

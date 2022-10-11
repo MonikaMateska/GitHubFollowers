@@ -14,6 +14,7 @@ class UserInfoViewController: UIViewController {
     let headerView = UIView()
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
+    let dateLabel = GHBodyLabel(textAlignment: .center)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class UserInfoViewController: UIViewController {
                 addChildViewController(GHUserInfoViewController(user: user), to: headerView)
                 addChildViewController(GHRepoItemViewController(user: user), to: itemViewOne)
                 addChildViewController(GHFollowerItemViewController(user: user), to: itemViewTwo)
+                updateDateLabel(with: user.createdAt)
             } catch {
                 hideLoadingView()
                 let mappedError = error as! NetworkError
@@ -46,6 +48,7 @@ class UserInfoViewController: UIViewController {
         configureHeaderView()
         configureViewOne()
         configureViewTwo()
+        configureDateLabel()
     }
     
     private func configureHeaderView() {
@@ -85,6 +88,23 @@ class UserInfoViewController: UIViewController {
             itemViewTwo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight)
         ])
+    }
+    
+    private func configureDateLabel() {
+        view.addSubview(dateLabel)
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
+            dateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            dateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            dateLabel.heightAnchor.constraint(equalToConstant: 18)
+        ])
+    }
+    
+    private func updateDateLabel(with inputDate: String) {
+        guard let date = inputDate.convertToDate() else { return }
+        dateLabel.text = "GitHub since \(date.convertToString())"
     }
     
     func addChildViewController(_ childVC: UIViewController, to contrainerView: UIView) {

@@ -60,3 +60,25 @@ extension UIViewController {
     }
     
 }
+
+extension String {
+    
+    func convertToDate() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date = dateFormatter.date(from: self)
+        
+        return date
+    }
+}
+
+extension Date {
+    
+    func convertToString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        let result = dateFormatter.string(from: self)
+        
+        return result
+    }
+}

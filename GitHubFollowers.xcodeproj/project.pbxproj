@@ -29,6 +29,7 @@
 		E23072C928F3858A0012507B /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072C828F385890012507B /* FollowerCell.swift */; };
 		E23072CB28F385F80012507B /* GHAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072CA28F385F80012507B /* GHAvatarImageView.swift */; };
 		E23072CD28F4A3350012507B /* GHEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072CC28F4A3350012507B /* GHEmptyStateView.swift */; };
+		E23072D028F564470012507B /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072CF28F564470012507B /* UserInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		E23072C828F385890012507B /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		E23072CA28F385F80012507B /* GHAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAvatarImageView.swift; sourceTree = "<group>"; };
 		E23072CC28F4A3350012507B /* GHEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEmptyStateView.swift; sourceTree = "<group>"; };
+		E23072CF28F564470012507B /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				E23072B328F33F6E0012507B /* followerList */,
+				E23072CE28F564170012507B /* userInfo */,
 				E23072AA28F2FC830012507B /* SearchViewController.swift */,
 			);
 			path = search;
@@ -220,6 +223,14 @@
 				E23072C628F379280012507B /* NetworkError.swift */,
 			);
 			path = api;
+			sourceTree = "<group>";
+		};
+		E23072CE28F564170012507B /* userInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E23072CF28F564470012507B /* UserInfoViewController.swift */,
+			);
+			path = userInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +376,7 @@
 				E230727928F2F3CE0012507B /* AppDelegate.swift in Sources */,
 				E23072B928F35BFF0012507B /* GHBodyLabel.swift in Sources */,
 				E23072C128F374720012507B /* User.swift in Sources */,
+				E23072D028F564470012507B /* UserInfoViewController.swift in Sources */,
 				E23072BF28F373290012507B /* Follower.swift in Sources */,
 				E23072CB28F385F80012507B /* GHAvatarImageView.swift in Sources */,
 				E230727B28F2F3CE0012507B /* SceneDelegate.swift in Sources */,

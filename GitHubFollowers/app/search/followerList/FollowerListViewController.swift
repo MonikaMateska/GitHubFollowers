@@ -92,7 +92,6 @@ class FollowerListViewController: UIViewController {
         Task {
             do {
                 let user = try await NetworkManager.shared.getUserInfo(for: username)
-                let _ = await NetworkManager.shared.downloadImage(from: user.avatarUrl)
                 let follower = Follower(login: user.login, avatarUrl: user.avatarUrl)
                 try PersistenceManager.update(with: follower, actionType: .add)
                 hideLoadingView()

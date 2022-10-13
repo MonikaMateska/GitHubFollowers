@@ -38,6 +38,7 @@
 		E23072E028F59B6A0012507B /* GHFollowerItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072DF28F59B6A0012507B /* GHFollowerItemViewController.swift */; };
 		E27CC7EB28F7EFE300E85364 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CC7EA28F7EFE300E85364 /* PersistenceManager.swift */; };
 		E27CC7EE28F7F17500E85364 /* PersistenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CC7ED28F7F17500E85364 /* PersistenceError.swift */; };
+		E27CC7F228F7F97700E85364 /* FavouriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CC7F128F7F97700E85364 /* FavouriteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		E23072DF28F59B6A0012507B /* GHFollowerItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFollowerItemViewController.swift; sourceTree = "<group>"; };
 		E27CC7EA28F7EFE300E85364 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		E27CC7ED28F7F17500E85364 /* PersistenceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceError.swift; sourceTree = "<group>"; };
+		E27CC7F128F7F97700E85364 /* FavouriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				E23072AC28F2FCA30012507B /* FavouritesListViewController.swift */,
+				E27CC7F128F7F97700E85364 /* FavouriteCell.swift */,
 			);
 			path = favourites;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			files = (
 				E23072B028F30B020012507B /* GHButton.swift in Sources */,
 				E27CC7EB28F7EFE300E85364 /* PersistenceManager.swift in Sources */,
+				E27CC7F228F7F97700E85364 /* FavouriteCell.swift in Sources */,
 				E23072C728F379280012507B /* NetworkError.swift in Sources */,
 				E23072C928F3858A0012507B /* FollowerCell.swift in Sources */,
 				E23072D228F57B440012507B /* GHUserInfoViewController.swift in Sources */,

@@ -73,4 +73,16 @@ extension FavouritesListViewController: UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: FavouriteCell.reuseID) as! FavouriteCell
+        let index = indexPath.row
+        let follower = favourites[index]
+        
+        let followerViewController = FollowerListViewController()
+        followerViewController.username = follower.login
+        followerViewController.title = follower.login
+        
+        navigationController?.pushViewController(followerViewController, animated: true)
+    }
+    
 }

@@ -85,4 +85,20 @@ extension FavouritesListViewController: UITableViewDelegate, UITableViewDataSour
         navigationController?.pushViewController(followerViewController, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        
+        let index = indexPath.row
+        let follower = favourites[index]
+        
+        favourites.remove(at: index)
+        tableView.deleteRows(at: [indexPath], with: .left)
+        
+        do {
+            try PersistenceManager.update(with: follower, actionType: .remove)
+        } catch {
+            presentAlert(title: "Error", message: "Unable to remove")
+        }
+    }
+    
 }

@@ -15,7 +15,7 @@ class SearchViewController: UIViewController {
         }
         return !username.trimmingCharacters(in: [" "]).isEmpty
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -35,9 +35,9 @@ class SearchViewController: UIViewController {
     
     @objc func pushFollowerListViewController() {
         guard usernameIsValid else {
-            presentErrorAlert(title: "Error",
-                              message: "The username is not valid. Please enter a valid one so we know who you are looking for.",
-                              buttonText: "OK")
+            presentAlert(title: "Error",
+                         message: "The username is not valid. Please enter a valid one so we know who you are looking for.",
+                         buttonText: "OK")
             return
         }
         let followerListViewController = FollowerListViewController()

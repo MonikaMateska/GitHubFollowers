@@ -26,7 +26,7 @@ class FollowerListViewController: UIViewController {
     var filteredFollowers: [Follower] = []
     var followers: [Follower] = []
     var isSearching = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,7 +69,7 @@ class FollowerListViewController: UIViewController {
                 if let error = error as? NetworkError {
                     errorMessage = error.rawValue
                 }
-                presentErrorAlert(message: errorMessage)
+                presentAlert(message: errorMessage)
             }
         }
     }
@@ -88,13 +88,21 @@ class FollowerListViewController: UIViewController {
     }
     
     @objc private func addToFavouriteList() {
+        showLoadingView()
         Task {
             do {
-//                let follower = NetworkManager.shared.
-//                try PersistenceManager.update(with: <#T##Follower#>, actionType: .add)
+                let user = try await NetworkManager.shared.getUserInfo(for: username)
+                let _ = await NetworkManager.shared.downloadImage(from: user.avatarUrl)
+                let follower = Follower(login: user.login, avatarUrl: user.avatarUrl)
+                try PersistenceManager.update(with: follower, actionType: .add)
+                hideLoadingView()
+                presentAlert(title: "Success!", message: "Successfully added to favourites list 🎉", buttonText: "Hooreey!")
             } catch {
+                hideLoadingView()
                 if let error = error as? PersistenceError {
-                    presentErrorAlert(message: error.rawValue)
+                    presentAlert(message: error.rawValue)
+                } else if let error = error as? NetworkError {
+                    presentAlert(message: error.rawValue)
                 }
             }
         }

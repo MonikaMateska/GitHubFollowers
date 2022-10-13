@@ -25,7 +25,7 @@ class PersistenceManager {
         switch actionType {
         case .add:
             guard !favouritesList.contains(where: { $0.login == follower.login }) else {
-                return
+                throw PersistenceError.alreadyAddedToFavourites
             }
             favouritesList.append(follower)
         case .remove:

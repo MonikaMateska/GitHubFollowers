@@ -12,9 +12,9 @@ fileprivate var containerView: UIView!
 
 extension UIViewController {
     
-    func presentErrorAlert(title: String = "Error",
-                           message: String,
-                           buttonText: String = "OK") {
+    func presentAlert(title: String = "Error",
+                      message: String,
+                      buttonText: String = "OK") {
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alertController.addAction(UIAlertAction.init(title: buttonText, style: .destructive))
@@ -62,7 +62,7 @@ extension UIViewController {
     
     func presentInSafariView(with url: String) {
         guard let url = URL(string: url) else {
-            presentErrorAlert(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonText: "OK")
+            presentAlert(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonText: "OK")
             return
         }
         

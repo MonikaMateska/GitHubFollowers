@@ -21,7 +21,7 @@ class UserInfoViewController: UIViewController {
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
     let dateLabel = GHBodyLabel(textAlignment: .center)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -42,7 +42,7 @@ class UserInfoViewController: UIViewController {
             } catch {
                 hideLoadingView()
                 let mappedError = error as! NetworkError
-                presentErrorAlert(message: "Failed loading user info. \(mappedError.rawValue).")
+                presentAlert(message: "Failed loading user info. \(mappedError.rawValue).")
             }
         }
     }
@@ -144,7 +144,7 @@ extension UserInfoViewController: UserInfoViewControllerDelegate {
     
     func didTapGetFollowers(for user: User) {
         guard user.followers > 0 else {
-            presentErrorAlert(message: "This user does not have any follower.")
+            presentAlert(message: "This user does not have any follower.")
             return 
         }
         delegate.didRequestFollowers(for: user.login)

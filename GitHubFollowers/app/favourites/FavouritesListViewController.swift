@@ -6,6 +6,13 @@ class FavouritesListViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
+        
+        do {
+            let favourites = try PersistenceManager.retreiveFavourites()
+            print(favourites)
+        } catch {
+            
+        }
     }
 
 }

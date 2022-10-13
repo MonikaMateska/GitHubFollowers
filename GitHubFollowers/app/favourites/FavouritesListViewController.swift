@@ -12,6 +12,10 @@ class FavouritesListViewController: UIViewController {
         view.backgroundColor = .systemBackground
         configureViewController()
         configureTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         retreiveFavourites()
     }
     

@@ -35,6 +35,9 @@ class FavouriteCell: UITableViewCell {
         addSubview(avatarImageView)
         addSubview(usernameLabel)
         
+        avatarImageView.translatesAutoresizingMaskIntoConstraints = false
+        usernameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         accessoryType = .disclosureIndicator
         let padding: CGFloat = 12
         

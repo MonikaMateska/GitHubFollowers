@@ -82,6 +82,22 @@ class FollowerListViewController: UIViewController {
     private func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let followerButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addToFavouriteList))
+        navigationItem.rightBarButtonItem = followerButton
+    }
+    
+    @objc private func addToFavouriteList() {
+        Task {
+            do {
+//                let follower = NetworkManager.shared.
+//                try PersistenceManager.update(with: <#T##Follower#>, actionType: .add)
+            } catch {
+                if let error = error as? PersistenceError {
+                    presentErrorAlert(message: error.rawValue)
+                }
+            }
+        }
     }
     
     private func createThreeColumnFlowLayout() -> UICollectionViewFlowLayout {

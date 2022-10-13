@@ -36,6 +36,8 @@
 		E23072D828F594900012507B /* GHItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072D728F594900012507B /* GHItemInfoViewController.swift */; };
 		E23072DE28F597640012507B /* GHRepoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072DD28F597640012507B /* GHRepoItemViewController.swift */; };
 		E23072E028F59B6A0012507B /* GHFollowerItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23072DF28F59B6A0012507B /* GHFollowerItemViewController.swift */; };
+		E27CC7EB28F7EFE300E85364 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CC7EA28F7EFE300E85364 /* PersistenceManager.swift */; };
+		E27CC7EE28F7F17500E85364 /* PersistenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27CC7ED28F7F17500E85364 /* PersistenceError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		E23072D728F594900012507B /* GHItemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHItemInfoViewController.swift; sourceTree = "<group>"; };
 		E23072DD28F597640012507B /* GHRepoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHRepoItemViewController.swift; sourceTree = "<group>"; };
 		E23072DF28F59B6A0012507B /* GHFollowerItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFollowerItemViewController.swift; sourceTree = "<group>"; };
+		E27CC7EA28F7EFE300E85364 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		E27CC7ED28F7F17500E85364 /* PersistenceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 		E23072AE28F30AC10012507B /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				E27CC7EC28F7F16100E85364 /* persistence */,
 				E23072DA28F596D30012507B /* viewControllers */,
 				E23072D928F596C80012507B /* views */,
 				E23072BA28F35D720012507B /* Extensions.swift */,
@@ -265,6 +270,15 @@
 				E23072D728F594900012507B /* GHItemInfoViewController.swift */,
 			);
 			path = viewControllers;
+			sourceTree = "<group>";
+		};
+		E27CC7EC28F7F16100E85364 /* persistence */ = {
+			isa = PBXGroup;
+			children = (
+				E27CC7EA28F7EFE300E85364 /* PersistenceManager.swift */,
+				E27CC7ED28F7F17500E85364 /* PersistenceError.swift */,
+			);
+			path = persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E23072B028F30B020012507B /* GHButton.swift in Sources */,
+				E27CC7EB28F7EFE300E85364 /* PersistenceManager.swift in Sources */,
 				E23072C728F379280012507B /* NetworkError.swift in Sources */,
 				E23072C928F3858A0012507B /* FollowerCell.swift in Sources */,
 				E23072D228F57B440012507B /* GHUserInfoViewController.swift in Sources */,
@@ -420,6 +435,7 @@
 				E23072BF28F373290012507B /* Follower.swift in Sources */,
 				E23072CB28F385F80012507B /* GHAvatarImageView.swift in Sources */,
 				E230727B28F2F3CE0012507B /* SceneDelegate.swift in Sources */,
+				E27CC7EE28F7F17500E85364 /* PersistenceError.swift in Sources */,
 				E23072B728F35B420012507B /* GHTitleLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
